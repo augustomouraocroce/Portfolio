@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Website</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./carrousel.css">
+    <script src="./carrousel.js"></script>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="folder" href="./images/" type="image/x-icon">
+    <link rel="folder" href="./images/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -37,9 +39,24 @@
             </span>
         </div>
     </div>
-    <div class="slider">
+    <!-- <div class="slider">
         
-    </div>
+    </div> -->
+    <section class="slider">
+        <button class="slide-arrow" id="slide-arrow-prev">
+          &#8249;
+        </button>
+        <button class="slide-arrow" id="slide-arrow-next">
+          &#8250;
+        </button>
+        <ul class="slides-container" id="slides-container">
+          <li class="slide"></li>
+          <li class="slide"></li>
+          <li class="slide"></li>
+          <li class="slide"></li>
+        </ul>
+      </section>
+      
     <div class="page-container-2-1">
         <div class="element-1 hide">
             
