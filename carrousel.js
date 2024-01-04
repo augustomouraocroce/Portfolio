@@ -1,26 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const slidesContainer = document.getElementById("slides-container");
-    const slide = document.querySelector(".slide");
-    const prevButton = document.getElementById("slide-arrow-prev");
-    const nextButton = document.getElementById("slide-arrow-next");
-    const imagesLength = slidesContainer.children.length;
-    
-    nextButton.addEventListener("click", () => {
-      const slideWidth = slide.clientWidth;
-      slidesContainer.scrollLeft += slideWidth;
-    });
-    
-    prevButton.addEventListener("click", () => {
-      const slideWidth = slide.clientWidth;
-      slidesContainer.scrollLeft -= slideWidth;
-    });
+  const slidesContainer = document.getElementById("slides-container");
+  const slide = document.querySelector(".slide");
+  const prevButton = document.getElementById("slide-arrow-prev");
+  const nextButton = document.getElementById("slide-arrow-next");
+  const imagesLength = slidesContainer.children.length;
+  
+  nextButton.addEventListener("click", () => {
+    const slideWidth = slide.clientWidth;
+    slidesContainer.scrollLeft += slideWidth;
+  });
+  
+  prevButton.addEventListener("click", () => {
+    const slideWidth = slide.clientWidth;
+    slidesContainer.scrollLeft -= slideWidth;
+  });
 
-    let currentSlide = 1;
+  let currentSlide = 1;
 
-    setInterval(() => {
+  function startSlider() {
+    intervalId = setInterval(() => {
       console.log({ currentSlide });
-      const isLast = currentSlide == imagesLength
-
+      const isLast = currentSlide == imagesLength;
+      
       if (isLast) {
         slidesContainer.scrollLeft = 0;
         currentSlide = 1;
@@ -28,5 +29,21 @@ document.addEventListener('DOMContentLoaded', () => {
         nextButton.click();
         currentSlide++;
       }
-    }, 4500);
+    }, 1000);
+  }
+
+  function pauseSlider() {
+    console.log("Pausado!");
+    clearInterval(intervalId);
+  }
+  
+  slidesContainer.addEventListener("mouseover", pauseSlider);
+  slidesContainer.addEventListener("mouseout", startSlider);
+  
+  if ("mouseOver" === true) {
+    console.log("Pausado!");
+  };
+  
+  // inicie o slider
+  startSlider();
 })

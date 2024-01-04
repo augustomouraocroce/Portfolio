@@ -26,12 +26,16 @@ a:link {
 
 .element-1{
   background: #EFEFEF;
-  height: 16.4375rem;
+  height: 14rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
 }
 
 .element-2{
   background: #EFEFEF;
-  height: 16.4375rem;
+  height: 14rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
 }
 
 .content{
@@ -89,11 +93,11 @@ a:link {
     flex-direction: column;
     gap: 1.5rem 1.5rem;
   }
-
+  
   .hide{
     display: none;
   }
-
+  
   .page-container-1-2 {
     display: flex;
     gap: 1.5rem 1.5rem;
@@ -105,14 +109,14 @@ a:link {
     gap: 1.5rem 1.5rem;
     flex-direction: column;
   }
-
+  
   .about-container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
   }
-
+  
   .element-1{
     background: #EFEFEF;
     height: auto;
@@ -131,11 +135,11 @@ a:link {
     flex-direction: column;
     gap: 1.5rem 1.5rem;
   }
-
+  
   .hide{
     display: none;
   }
-
+  
   .page-container-1-2 {
     display: flex;
     gap: 1.5rem 1.5rem;
@@ -147,7 +151,7 @@ a:link {
     gap: 1.5rem 1.5rem;
     flex-direction: column;
   }
-
+  
   .about-container{
     display: flex;
     flex-direction: row;
