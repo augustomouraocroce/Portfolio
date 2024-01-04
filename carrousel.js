@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nextButton.click();
         currentSlide++;
       }
-    }, 1000);
+    }, 3000);
   }
 
   function pauseSlider() {
