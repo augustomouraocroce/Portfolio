@@ -20,7 +20,7 @@
 
 .slide-arrow {
   position: absolute;
-  display: flex;
+  display: none;
   top: 0;
   bottom: 0;
   margin: auto;
