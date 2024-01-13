@@ -12,6 +12,10 @@ a:link {
   color: #686868;
 }
 
+.img-swiper {
+  width: 100%;
+}
+
 .page-container-1-2 {
   display: grid; 
   grid-template-columns: 2fr 1fr 1fr; 

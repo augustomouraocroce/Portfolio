@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Augusto Mourão</title>
+    <title>Home | Augusto Mourão</title>
+    
+    <script src="./cursor.js"></script>
+    <script src="./time.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.js"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./hover.css">
-    <link rel="stylesheet" href="./carrousel.css">
-    <script src="./carrousel.js"></script>
-    <script src="./time.js"></script>
+    <link rel="stylesheet" href="./cursor.css">
+    
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="folder" href="./images/">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+    
     <div class="page-container-1-2">
         <div class="element-2">
             <div class="content">
@@ -57,37 +69,101 @@
             
         </div>
         
-        
     </div>
     
-    <section class="slider">
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-3.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-4.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-5.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-6.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-7.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-8.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-9.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-10.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-11.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-12.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-13.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img class="swiper" src="./images/img-14.jpg" alt="">
+            </div>
+            
+            
+            <!-- ... -->
+        </div>
+        <!-- If we need pagination -->
+        <!-- <div class="swiper-pagination"></div> -->
         
-        <button class="slide-arrow" id="slide-arrow-prev">
-            &#8249;
-        </button>
+        <!-- If we need navigation buttons -->
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
         
-        <button class="slide-arrow" id="slide-arrow-next">
-            &#8250;
-        </button>
-        
-        <ul class="slides-container" id="slides-container">
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-        </ul>
-        
-    </section>
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+    </div>
+    
+    <!-- Inline Code para o funcionamento do Swiper.Js -->
+    <style>
+        .swiper {
+            width: 100%;
+            /* height: calc(100vh - 2rem); */
+            height: auto;
+            border-radius: 1rem;
+        }
+    </style>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    </script>
     
     <div class="page-container-2-1">
         
