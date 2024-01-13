@@ -16,9 +16,10 @@
   left: 0;
   top: 0;
   transform: translate(calc(-50% + 15px), -50%);
+  z-index: 999;
 }
 
-.cursor2 {
+.cursor-two {
   width: 0.4rem;
   height: 0.4rem;
   border-radius: 100%;
@@ -27,6 +28,7 @@
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: width .3s, height .3s, opacity .3s;
+  z-index: 999;
 }
 
 /* .cursor2 {
