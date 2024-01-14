@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home | Augusto Mourão</title>
     
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script>
     <script src="./cursor.js"></script>
     <script src="./time.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script>
+    <script src="./carrousel.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.js"></script> -->
     
     <link href="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css" rel="stylesheet">
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./hover.css">
     <link rel="stylesheet" href="./cursor.css">
+    <link rel="stylesheet" href="./carrousel.css">
     
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="folder" href="./images/">
@@ -131,45 +133,6 @@
             <!-- If we need scrollbar -->
             <!-- <div class="swiper-scrollbar"></div> -->
         </div>
-        
-        <!-- Inline Code para o funcionamento do Swiper.Js -->
-        <style>
-            .swiper {
-                width: 100%;
-                /* height: calc(100vh - 2rem); */
-                height: auto;
-                border-radius: 1rem;
-            }
-        </style>
-        <script>
-            const swiper = new Swiper('.swiper', {
-                
-                autoplay: {
-                    delay: 3000,
-                    pauseOnMouseEnter: true,
-                },
-                
-                // Optional parameters
-                direction: 'horizontal',
-                loop: true,
-                
-                // If we need pagination
-                pagination: {
-                    el: '.swiper-pagination',
-                },
-                
-                // Navigation arrows
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                
-                // And if we need scrollbar
-                scrollbar: {
-                    el: '.swiper-scrollbar',
-                },
-            });
-        </script>
         
         <div class="page-container-2-1">
             

@@ -10,7 +10,7 @@
   height: 2.5rem;
   border-radius: 100%;
   border: 1px solid #686868;
-  transition: all 200ms ease-out;
+  transition: all 100ms ease-out;
   position: fixed;
   pointer-events: none;
   left: 0;
@@ -27,7 +27,7 @@
   position: fixed;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  transition: width .3s, height .3s, opacity .3s;
+  transition: width .1s, height .1s, opacity .1s;
   z-index: 999;
 }
 

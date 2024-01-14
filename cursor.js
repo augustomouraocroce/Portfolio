@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-
   var cursor = document.querySelector('.cursor');
   var cursorinner = document.querySelector('.cursor-two');
   var a = document.querySelectorAll('a');
 
   document.addEventListener('mousemove', function(e) {
-    console.log('opa')
     var x = e.clientX; // Horizontal
     var y = e.clientY; // Vertical
     cursor.style.transform = `translate3d(calc(${x}px - 50%), calc(${y}px - 50%), 0)`
