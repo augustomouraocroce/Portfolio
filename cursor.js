@@ -5,22 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
   var a = document.querySelectorAll('a');
 
   document.addEventListener('mousemove', function(e) {
-      var x = e.clientX; // Horizontal
-      var y = e.clientY; // Vertical
-      cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
-      //The translate3d() CSS function repositions an element in 3D space. Its result is a <transform-function> data type.
-      //Atualiza a posição do cursor com base nas coordenadas do mouse.
-      //Usa a propriedade transform do CSS para aplicar uma transformação 3D ao cursor.
-      //O translate3d move o cursor no espaço 3D.
-      //Os valores calc(${e.clientX}px - 50%) e calc(${e.clientY}px - 50%) ajustam a
-      //posição do cursor para que o ponto central do cursor esteja alinhado com as coordenadas do mouse.
-  });
+    console.log('opa')
+    var x = e.clientX; // Horizontal
+    var y = e.clientY; // Vertical
+    cursor.style.transform = `translate3d(calc(${x}px - 50%), calc(${y}px - 50%), 0)`
 
-  document.addEventListener('mousemove', function(e) {
-      var x = e.clientX;
-      var y = e.clientY;
-      cursorinner.style.left = x + 'px';
-      cursorinner.style.top = y + 'px';
+    //The translate3d() CSS function repositions an element in 3D space. Its result is a <transform-function> data type.
+    //Atualiza a posição do cursor com base nas coordenadas do mouse.
+    //Usa a propriedade transform do CSS para aplicar uma transformação 3D ao cursor.
+    //O translate3d move o cursor no espaço 3D.
+    //Os valores calc(${e.clientX}px - 50%) e calc(${e.clientY}px - 50%) ajustam a
+    //posição do cursor para que o ponto central do cursor esteja alinhado com as coordenadas do mouse.
+
+    cursorinner.style.left = x + 'px';
+    cursorinner.style.top = y + 'px';
   });
 
   document.addEventListener('mousedown', function() {
