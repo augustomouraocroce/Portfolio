@@ -1,57 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
-  var cursor = document.querySelector('.cursor');
-  var cursorinner = document.querySelector('.cursor-two');
-  var a = document.querySelectorAll('a');
-
-  document.addEventListener('mousemove', function(e) {
-    var x = e.clientX; // Horizontal
-    var y = e.clientY; // Vertical
-    cursor.style.transform = `translate3d(calc(${x}px - 50%), calc(${y}px - 50%), 0)`
-
-    //The translate3d() CSS function repositions an element in 3D space. Its result is a <transform-function> data type.
-    //Atualiza a posição do cursor com base nas coordenadas do mouse.
-    //Usa a propriedade transform do CSS para aplicar uma transformação 3D ao cursor.
-    //O translate3d move o cursor no espaço 3D.
-    //Os valores calc(${e.clientX}px - 50%) e calc(${e.clientY}px - 50%) ajustam a
-    //posição do cursor para que o ponto central do cursor esteja alinhado com as coordenadas do mouse.
-
-    cursorinner.style.left = x + 'px';
-    cursorinner.style.top = y + 'px';
-  });
-
-  document.addEventListener('mousedown', function() {
-      cursor.classList.add('click');
-      cursorinner.classList.add('cursorinnerhover')
-  });
-
-  document.addEventListener('mouseup', function() {
-      cursor.classList.remove('click')
-      cursorinner.classList.remove('cursorinnerhover')
-  });
-
-  a.forEach(item => {
-      item.addEventListener('mouseover', () => {
-          cursor.classList.add('hover');
-          cursorinner.classList.add('cursorinnerhover');
-      });
-
-      item.addEventListener('mouseleave', () => {
-          cursor.classList.remove('hover');
-          cursorinner.classList.remove('cursorinnerhover');
-      });
-  })
-
-// //a.forEach(item => { ... });: Itera sobre cada elemento <a> na NodeList a (que foi obtida usando document.querySelectorAll('a')).
-
-// item.addEventListener('mouseover', () => { ... });: Adiciona um ouvinte de evento mouseover a cada elemento <a>. Quando o mouse passa sobre um elemento <a>, a função de retorno de chamada é acionada.
-
-// cursor.classList.add('hover');: Adiciona a classe CSS 'hover' ao elemento referenciado por cursor. Isso pode ser usado para aplicar estilos específicos quando o cursor está sobre um link.
-
-// cursorinner.classList.add('cursorinnerhover');: Adiciona a classe CSS 'cursorinnerhover' ao elemento referenciado por cursorinner. Isso pode ser usado para aplicar estilos específicos ao elemento interno do cursor quando o cursor está sobre um link.
-
-// item.addEventListener('mouseleave', () => { ... });: Adiciona um ouvinte de evento mouseleave a cada elemento <a>. Quando o mouse deixa um elemento <a>, a função de retorno de chamada é acionada.
-
-// cursor.classList.remove('hover');: Remove a classe CSS 'hover' do elemento referenciado por cursor. Isso pode ser usado para reverter os estilos aplicados quando o mouse deixa um link.
-
-// cursorinner.classList.remove('cursorinnerhover');: Remove a classe CSS 'cursorinnerhover' do elemento referenciado por cursorinner. Isso pode ser usado para reverter os estilos aplicados ao elemento interno do cursor quando o mouse deixa um link.
-})
+    const cursor = document.querySelector('#cursor');
+    const cursorCircle = cursor.querySelector('.cursor__circle');
+    
+    const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
+    const pos = { x: 0, y: 0 }; // cursor's coordinates
+    const speed = 0.1; // between 0 and 1
+    
+    const updateCoordinates = e => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    }
+    
+    window.addEventListener('mousemove', updateCoordinates);
+    
+    
+    function getAngle(diffX, diffY) {
+        return Math.atan2(diffY, diffX) * 180 / Math.PI;
+    }
+    
+    function getSqueeze(diffX, diffY) {
+        const distance = Math.sqrt(
+            Math.pow(diffX, 2) + Math.pow(diffY, 2)
+            );
+            const maxSqueeze = 0.15;
+            const accelerator = 1500;
+            return Math.min(distance / accelerator, maxSqueeze);
+        }
+        
+        
+        const updateCursor = () => {
+            const diffX = Math.round(mouse.x - pos.x);
+            const diffY = Math.round(mouse.y - pos.y);
+            
+            pos.x += diffX * speed;
+            pos.y += diffY * speed;
+            
+            const angle = getAngle(diffX, diffY);
+            const squeeze = getSqueeze(diffX, diffY);
+            
+            const scale = 'scale(' + (1 + squeeze) + ', ' + (1 - squeeze) +')';
+            const rotate = 'rotate(' + angle +'deg)';
+            const translate = 'translate3d(' + pos.x + 'px ,' + pos.y + 'px, 0)';
+            
+            cursor.style.transform = translate;
+            cursorCircle.style.transform = rotate + scale;
+        };
+        
+        function loop() {
+            updateCursor();
+            requestAnimationFrame(loop);
+        }
+        
+        requestAnimationFrame(loop);
+        
+        
+        
+        const cursorModifiers = document.querySelectorAll('[cursor-class]');
+        
+        cursorModifiers.forEach(curosrModifier => {
+            curosrModifier.addEventListener('mouseenter', function() {
+                const className = this.getAttribute('cursor-class');
+                cursor.classList.add(className);
+            });
+            
+            curosrModifier.addEventListener('mouseleave', function() {
+                const className = this.getAttribute('cursor-class');
+                cursor.classList.remove(className);
+            });
+        });
+    });

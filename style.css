@@ -31,14 +31,14 @@ a:after {
   display: block;
   margin-top: 0px;
   left: 0%;
-  background: #686868;;
-  transition: width .3s ease;
+  background: #646464;;
+  transition: width .3s cubic-bezier(1, 0, 0, 1);
 }
 
 a:hover:after{
   width: 100%;
   left: 0%;
-  background: black;
+  background: #686868;
 }
 
 .img-swiper {

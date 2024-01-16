@@ -1,6 +1,9 @@
 .swiper {
   width: 100%;
-  /* height: calc(100vh - 2rem); */
-  height: auto;
+  height: calc(100vh - 21rem);
   border-radius: 1rem;
+}
+
+.swiper img{
+  object-position: center;
 }
