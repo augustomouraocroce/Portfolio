@@ -1,4 +1,20 @@
-body{
+html {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body {
   padding: 2rem;
   display: grid;
   gap: 1.5rem 1.5rem;
@@ -8,7 +24,7 @@ body{
 In general, when specifying link states, you should follow the "love/hate" principal:
 link, visited, hover, active */
 
-a{
+a {
   text-transform: none;
   position: relative;
   text-decoration: none;
@@ -39,10 +55,6 @@ a:hover:after{
   width: 100%;
   left: 0%;
   background: #686868;
-}
-
-.img-swiper {
-  width: 100%;
 }
 
 .page-container-1-2 {
@@ -118,6 +130,39 @@ a:hover:after{
   flex-direction: column;
 }
 
+@media screen and (max-width: 768px) {
+  body{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem 1.5rem;
+  }
+  
+  .hide{
+    display: none;
+  }
+  
+  .page-container-1-2 {
+    display: flex;
+    gap: 1.5rem 1.5rem;
+    flex-direction: column;
+  }
+  
+  .page-container-2-1 {
+    display: flex;
+    gap: 1.5rem 1.5rem;
+    flex-direction: column;
+  }
+  
+  .about-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto;
+  }
+}
+
 @media screen and (max-width: 360px) {
   body{
     padding: 2rem;
@@ -157,39 +202,6 @@ a:hover:after{
   
   .element-2{
     /* background: #EFEFEF; */
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  body{
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem 1.5rem;
-  }
-  
-  .hide{
-    display: none;
-  }
-  
-  .page-container-1-2 {
-    display: flex;
-    gap: 1.5rem 1.5rem;
-    flex-direction: column;
-  }
-  
-  .page-container-2-1 {
-    display: flex;
-    gap: 1.5rem 1.5rem;
-    flex-direction: column;
-  }
-  
-  .about-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
     height: auto;
   }
 }

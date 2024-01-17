@@ -1,9 +1,11 @@
 .swiper {
   width: 100%;
-  height: calc(100vh - 21rem);
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
+  /* border: 1px dashed #000; */
 }
 
-.swiper img{
-  object-position: center;
+.swiper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
