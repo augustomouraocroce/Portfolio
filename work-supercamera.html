@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home | Augusto Mourão</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/cursor.js"></script>
+    <script src="./js/time.js"></script>
+    <script src="./js/carrousel.js"></script>
+    <script src="./js/menu.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/hover.css">
+    <link rel="stylesheet" href="./css/cursor.css">
+    <link rel="stylesheet" href="./css/carrousel.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="folder" href="./images/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <style>
+        .icon-button {
+            position: relative;
+            /* display: flex; */
+            align-items: center;
+            column-gap: calc(8 / 14.4 * 1rem);
+            z-index: 0;
+            
+            display: flex;
+            opacity: 1;
+            border: none;
+        }
+        
+        .icon-button:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: calc(20 / 14.4 * 1rem);
+            height: calc(20 / 14.4 * 1rem);
+            border-radius: calc(1 / 14.4 * 1rem);
+            background: black;
+            transition: width .4s cubic-bezier(.4,.4,.1,1);
+            z-index: -1;
+        }
+        
+        .icon-button .button_arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(20 / 14.4 * 1rem);
+            height: calc(20 / 14.4 * 1rem);
+        }
+        
+        .icon-button .button_arrow svg {
+            transition: transform .4s cubic-bezier(.4,.4,.1,1);
+            width: calc(16 / 14.4 * 1rem);
+            height: calc(16 / 14.4 * 1rem);
+        }
+        
+        .icon-button:hover:before {
+            width: calc(100% + 4 / 14.4 * 1rem);
+        }
+        
+        .icon-button:hover svg {
+            transform: rotate(-45deg);
+        }
+        
+        .button-label {
+            color: black;
+            transition: color .4s cubic-bezier(.4,.4,.1,1);
+            
+            color: #232323;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.8rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%; /* 1.4rem */
+        }
+        
+        .button-label:hover {
+            color: white;
+        }
+    </style>
+    
+    <div id="cursor">
+        <div class="cursor-circle">
+            
+        </div>
+    </div>
+    
+    <div class="page-container-1-2">
+        <div class="element-2">
+            <div class="content">
+                Augusto é um designer multidisciplinar dedicado ao desenvolvimento de projetos gráficos impressos e digitais, para indivíduos e instituições nos setores artísticos e comerciais. Têm como prioridade criar soluções que não são apenas úteis, mas também estéticas e orientadas por processos. É bacharel em design gráfico pelo Instituto UNI BH.
+                <div class="list-column">
+                    <span class="sub-content">
+                        Visual Design, Packaging, UI/UX & Motion
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="element-1 hide"></div>
+        <div class="element-1">
+            <div class="time about-container">
+                <span>Belo Horizonte -</span>
+                <span id="horario"></span>
+            </div>
+            <span class="about-container">
+                <div>
+                    <a href="" class="menu-btn" cursor-class="menu-cursor-open">
+                        ++
+                    </a>
+                </div>
+            </span>
+        </div>
+    </div>
+    
+    <div class="page-container-2-2">
+        
+        <div class="element-img"> 
+            <h3>Olá</h3>
+            <p>Mundo</p>
+            <a href="" class="icon-button">
+
+                <div class="button-label">
+                    Acessar
+                </div>
+
+                <div class="button_arrow">
+                    <svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                        <g stroke="#fff" stroke-linejoin="round">
+                            <path d="m11 5v6h-6"></path>
+                            <path d="m5 5 6 6"></path>
+                        </g>
+                    </svg>
+                </div>
+            </a>
+        </div>
+        
+        <div class="element-img"></div>
+        <div class="element-img"></div>
+        <div class="element-img"></div>
+        <div class="element-img"></div>
+        <div class="element-img"></div>
+        <div class="element-img"></div>
+        <div class="element-img"></div>
+    </div>
+    
+    <div class="page-container-2-1">
+        <div class="element-1 hide"></div>
+        <div class="element-1 hide"></div>
+        <div class="element-2">
+            <div class="content"> Para perguntas de trabalho, venda de impressos ou apenas um olá, entre em contato comigo em:
+                <div class="list-column sub-content">
+                    <a cursor-class="e-mail" href="mailto:augustomouraocroce@gmail.com" target="_blank">augustomouraocroce@gmail.com</a>
+                    <a cursor-class="cv" href="" target="_blank">Curriculum Vitae</a>
+                    <a cursor-class="instagram" href="https://www.instagram.com/awlgusto/" target="_blank">Instagram</a>
+                    <a cursor-class="github" href="https://github.com/augustomouraocroce" target="_blank">GitHub</a>
+                    <a cursor-class="linkedin" href="https://www.linkedin.com/in/augustomourao/" target="_blank">Linkedin</a>
+                    <a cursor-class="behance" href="https://www.behance.net/amcroce" target="_blank">Behance</a>
+                    <a cursor-class="dribbble" href="https://dribbble.com/augustocroce" target="_blank">Dribbble</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
